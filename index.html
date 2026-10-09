@@ -6,7 +6,7 @@
 
   <title>ax___najmul___07 | Creator</title>
   <meta name="theme-color" content="#080808">
-  <meta name="description" content="Follow ax___najmul___07 for Reels, videos and stories.">
+  <meta name="description" content="Follow ax___najmul___07 for reels, videos and stories.">
 
   <style>
     * {
@@ -36,89 +36,70 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     .container {
       width: 100%;
       max-width: 650px;
-      margin: 0 auto;
-      padding: 38px 20px 24px;
+      margin: auto;
+      padding: 45px 20px 25px;
     }
 
-    /* PROFILE */
     .profile {
       display: block;
       width: 150px;
       height: 150px;
       margin: 0 auto;
-      object-fit: cover;
-      border: 4px solid #fff;
+      border: 4px solid white;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(255, 90, 0, 0.45);
+      object-fit: cover;
+      box-shadow: 0 0 28px rgba(255, 100, 0, 0.45);
     }
 
     h1 {
-      margin-top: 20px;
-      font-size: clamp(24px, 6vw, 34px);
-      line-height: 1.25;
+      margin-top: 22px;
+      font-size: 30px;
       overflow-wrap: anywhere;
     }
 
     .username {
-      margin-top: 8px;
+      margin-top: 7px;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 18px;
     }
 
     .bio {
-      margin: 22px auto 28px;
+      margin: 24px auto 28px;
       color: #dddddd;
       font-size: 17px;
-      line-height: 1.9;
+      line-height: 2;
     }
 
-    /* BUTTONS */
     .buttons {
       display: grid;
-      gap: 14px;
-      margin: 0 auto;
-      max-width: 460px;
+      gap: 16px;
+      margin: 28px auto 0;
     }
 
     .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 14px 18px;
-      border: 1px solid transparent;
-      border-radius: 50px;
+      display: block;
+      width: 100%;
+      padding: 16px 12px;
+      border-radius: 40px;
       background: linear-gradient(100deg, var(--pink), var(--orange));
       color: white;
-      font-size: 16px;
-      font-weight: 700;
-      box-shadow: 0 5px 20px rgba(255, 70, 0, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      box-shadow: 0 7px 24px rgba(255, 70, 0, 0.2);
+      transition: transform 0.2s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255, 70, 0, 0.32);
     }
 
-    .btn:focus-visible,
-    .post:focus-visible {
-      outline: 2px solid white;
-      outline-offset: 4px;
-    }
-
-    /* POSTS */
     .section-title {
-      margin: 40px 0 20px;
-      font-size: 25px;
+      margin: 48px 0 22px;
+      font-size: 27px;
     }
 
     .posts {
@@ -128,64 +109,60 @@
     }
 
     .post {
+      min-width: 0;
+      min-height: 210px;
+      aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      min-width: 0;
-      aspect-ratio: 1 / 1;
       padding: 14px;
       border: 1px solid #303030;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #222222, #111111);
+      border-radius: 22px;
+      background: linear-gradient(145deg, #202020, #111111);
       color: white;
+      text-decoration: none;
       font-size: 16px;
-      font-weight: 700;
+      font-weight: bold;
       overflow-wrap: anywhere;
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .post:hover {
-      transform: translateY(-3px);
       border-color: var(--orange);
+      transform: translateY(-3px);
     }
 
     .post-icon {
-      font-size: 38px;
-      line-height: 1;
+      font-size: 44px;
+      line-height: 1.3;
     }
 
-    /* FOOTER */
     footer {
-      margin-top: 38px;
-      padding-top: 18px;
-      border-top: 1px solid #222;
-      color: #888;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #222222;
+      color: #777777;
       font-size: 13px;
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 380px) {
       .container {
-        padding: 28px 14px 20px;
+        padding: 35px 14px 20px;
       }
 
-      .profile {
-        width: 125px;
-        height: 125px;
-      }
-
-      .posts {
-        gap: 10px;
+      h1 {
+        font-size: 25px;
       }
 
       .post {
-        padding: 10px;
+        min-height: 160px;
         font-size: 14px;
       }
 
-      .btn {
-        font-size: 15px;
+      .post-icon {
+        font-size: 36px;
       }
     }
 
@@ -214,10 +191,11 @@
       >
 
       <h1>ax___najmul___07</h1>
+
       <p class="username">@ax___najmul___07</p>
 
       <p class="bio">
-        🔥 Creator • Reels • Attitude<br>
+        🔥 Creator · Reels · Attitude<br>
         🎬 New Videos &amp; Stories<br>
         ❤️ Follow for more
       </p>
@@ -243,36 +221,29 @@
         🔥 My Posts
       </h2>
 
-    .post {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-  padding: 0;
-  aspect-ratio: 1 / 1;
-  border-radius: 18px;
-  background: #181818;
-}
+      <div class="posts">
+        <a
+          class="post"
+          href="https://www.instagram.com/reel/DdyunN0SRJl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Watch Instagram Reel"
+        >
+          <span class="post-icon" aria-hidden="true">▶️</span>
+          <span>Watch Reel</span>
+        </a>
 
-.post-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.post-label {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 35px 8px 14px;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  background: linear-gradient(transparent, #000);
-}
+        <a
+          class="post"
+          href="https://www.instagram.com/ax___najmul___07/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View Instagram photos"
+        >
+          <span class="post-icon" aria-hidden="true">📸</span>
+          <span>Instagram Photos</span>
+        </a>
+      </div>
     </section>
 
     <footer>
