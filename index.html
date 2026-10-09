@@ -2,11 +2,11 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>ax___najmul___07 | Creator</title>
   <meta name="theme-color" content="#080808">
-  <meta name="description" content="Follow ax___najmul___07 for reels, videos and stories.">
+  <meta name="description" content="Creator profile, reels, photography and more.">
 
   <style>
     * {
@@ -17,89 +17,121 @@
 
     :root {
       --bg: #080808;
-      --card: #181818;
-      --text: #ffffff;
-      --muted: #aaaaaa;
+      --card: #151515;
+      --text: #fff;
+      --muted: #aaa;
       --pink: #ff0055;
       --orange: #ff7a00;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 20px;
     }
 
     body {
-      font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      text-align: center;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .container {
-      width: 100%;
       max-width: 650px;
       margin: auto;
-      padding: 45px 20px 25px;
+      padding: 28px 18px;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0 10px;
     }
 
     .profile {
-      display: block;
       width: 150px;
       height: 150px;
-      margin: 0 auto;
+      display: block;
+      margin: 0 auto 20px;
+      object-fit: cover;
       border: 4px solid white;
       border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 28px rgba(255, 100, 0, 0.45);
+      box-shadow: 0 0 28px #ff7a0055;
     }
 
     h1 {
-      margin-top: 22px;
-      font-size: 30px;
+      font-size: clamp(24px, 6vw, 32px);
       overflow-wrap: anywhere;
     }
 
     .username {
-      margin-top: 7px;
       color: var(--muted);
-      font-size: 18px;
+      font-size: 17px;
+      margin-top: 5px;
     }
 
     .bio {
-      margin: 24px auto 28px;
-      color: #dddddd;
-      font-size: 17px;
+      margin: 20px 0;
       line-height: 2;
+      color: #ddd;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 22px 0;
+      text-align: center;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .stats span {
+      color: var(--muted);
+      font-size: 12px;
     }
 
     .buttons {
       display: grid;
-      gap: 16px;
-      margin: 28px auto 0;
+      gap: 14px;
+      margin: 25px 0;
     }
 
     .btn {
       display: block;
-      width: 100%;
-      padding: 16px 12px;
+      padding: 15px 12px;
       border-radius: 40px;
-      background: linear-gradient(100deg, var(--pink), var(--orange));
+      background: linear-gradient(
+        100deg, var(--pink), var(--orange)
+      );
       color: white;
-      text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: bold;
-      box-shadow: 0 7px 24px rgba(255, 70, 0, 0.2);
-      transition: transform 0.2s ease;
+      text-align: center;
+      box-shadow: 0 6px 22px #ff550022;
+      transition: transform .2s;
     }
 
     .btn:hover {
       transform: translateY(-2px);
     }
 
+    .section {
+      margin-top: 42px;
+      padding-top: 25px;
+      border-top: 1px solid #292929;
+    }
+
     .section-title {
-      margin: 48px 0 22px;
-      font-size: 27px;
+      font-size: 23px;
+      margin-bottom: 18px;
     }
 
     .posts {
@@ -110,59 +142,146 @@
 
     .post {
       min-width: 0;
-      min-height: 210px;
+      min-height: 190px;
       aspect-ratio: 1 / 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 14px;
+      padding: 12px;
       border: 1px solid #303030;
-      border-radius: 22px;
-      background: linear-gradient(145deg, #202020, #111111);
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #222, #101010);
+      text-align: center;
       overflow-wrap: anywhere;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: transform .2s, border-color .2s;
     }
 
     .post:hover {
-      border-color: var(--orange);
       transform: translateY(-3px);
+      border-color: var(--orange);
     }
 
     .post-icon {
-      font-size: 44px;
+      font-size: 43px;
       line-height: 1.3;
     }
 
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 7px;
+    }
+
+    .gallery-item {
+      min-width: 0;
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid #303030;
+      background: linear-gradient(145deg, #323232, #121212);
+      font-size: 32px;
+      overflow: hidden;
+    }
+
+    .gallery-item:nth-child(3n + 1) {
+      background: linear-gradient(145deg, #70402b, #181818);
+    }
+
+    .gallery-item:nth-child(3n + 2) {
+      background: linear-gradient(145deg, #454545, #151515);
+    }
+
+    .about {
+      padding: 18px;
+      border: 1px solid #303030;
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .about p {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    .about span {
+      color: var(--muted);
+    }
+
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      text-align: center;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--pink);
+      border-radius: 50%;
+      background: #171117;
+      font-size: 22px;
+    }
+
+    .support {
+      padding: 20px;
+      border: 1px solid #ff4b32;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #241020, #141414);
+      text-align: center;
+    }
+
+    .support p {
+      color: #ddd;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
     footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #222222;
-      color: #777777;
-      font-size: 13px;
+      margin-top: 42px;
+      padding: 22px 0 10px;
+      border-top: 1px solid #292929;
+      color: #888;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer p + p {
+      margin-top: 8px;
     }
 
     @media (max-width: 380px) {
       .container {
-        padding: 35px 14px 20px;
-      }
-
-      h1 {
-        font-size: 25px;
+        padding: 20px 12px;
       }
 
       .post {
-        min-height: 160px;
-        font-size: 14px;
+        min-height: 150px;
       }
 
       .post-icon {
-        font-size: 36px;
+        font-size: 35px;
+      }
+
+      .stats {
+        gap: 20px;
       }
     }
 
@@ -183,7 +302,7 @@
 <body>
   <main class="container">
 
-    <header>
+    <header id="home">
       <img
         class="profile"
         src="20260904_153946.png"
@@ -191,7 +310,6 @@
       >
 
       <h1>ax___najmul___07</h1>
-
       <p class="username">@ax___najmul___07</p>
 
       <p class="bio">
@@ -199,9 +317,24 @@
         🎬 New Videos &amp; Stories<br>
         ❤️ Follow for more
       </p>
+
+      <div class="stats">
+        <div>
+          <strong>Creator</strong>
+          <span>Profile</span>
+        </div>
+        <div>
+          <strong>Reels</strong>
+          <span>Videos</span>
+        </div>
+        <div>
+          <strong>Photos</strong>
+          <span>Gallery</span>
+        </div>
+      </div>
     </header>
 
-    <nav class="buttons" aria-label="Social links">
+    <nav class="buttons" aria-label="Profile links">
       <a
         class="btn"
         href="https://www.instagram.com/ax___najmul___07/"
@@ -214,12 +347,14 @@
       <a class="btn" href="#reels">
         🎬 Watch My Reels
       </a>
+
+      <a class="btn" href="#gallery">
+        🖼️ Explore My Gallery
+      </a>
     </nav>
 
-    <section id="reels" aria-labelledby="posts-heading">
-      <h2 class="section-title" id="posts-heading">
-        🔥 My Posts
-      </h2>
+    <section class="section" id="reels">
+      <h2 class="section-title">🔥 My Posts</h2>
 
       <div class="posts">
         <a
@@ -227,10 +362,9 @@
           href="https://www.instagram.com/reel/DdyunN0SRJl/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Watch Instagram Reel"
         >
-          <span class="post-icon" aria-hidden="true">▶️</span>
-          <span>Watch Reel</span>
+          <span class="post-icon">▶️</span>
+          <strong>Watch Reel</strong>
         </a>
 
         <a
@@ -238,18 +372,132 @@
           href="https://www.instagram.com/ax___najmul___07/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="View Instagram photos"
         >
-          <span class="post-icon" aria-hidden="true">📸</span>
-          <span>Instagram Photos</span>
+          <span class="post-icon">📸</span>
+          <strong>Instagram Photos</strong>
+        </a>
+
+        <a
+          class="post"
+          href="https://www.instagram.com/ax___najmul___07/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="post-icon">🎬</span>
+          <strong>More Reels</strong>
+        </a>
+
+        <a
+          class="post"
+          href="https://www.instagram.com/ax___najmul___07/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="post-icon">❤️</span>
+          <strong>Follow for More</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2 class="section-title">📸 My Gallery</h2>
+
+      <div class="gallery">
+        <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">🌅</a>
+        <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">📷</a>
+        <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">🖤</a>
+        <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">🌿</a>
+        <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">✨</a>
+        <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">🌃</a>
+      </div>
+
+      <p style="color:#aaa; font-size:13px; margin-top:12px">
+        More photos on Instagram
+      </p>
+    </section>
+
+    <section class="section" id="about">
+      <h2 class="section-title">📂 About Me</h2>
+
+      <div class="about">
+        <p><span>Username</span><strong>ax___najmul___07</strong></p>
+        <p><span>Location</span><strong>India 🇮🇳</strong></p>
+        <p><span>Passion</span><strong>Editing · Photography</strong></p>
+        <p><span>Dream</span><strong>Big Creator 🔥</strong></p>
+      </div>
+    </section>
+
+    <section class="section" id="connect">
+      <h2 class="section-title">📞 Connect With Me</h2>
+
+      <div class="socials">
+        <a
+          class="social"
+          href="https://www.instagram.com/ax___najmul___07/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="social-icon">📷</span>
+          <span>Instagram</span>
+        </a>
+
+        <a
+          class="social"
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="social-icon">▶️</span>
+          <span>YouTube</span>
+        </a>
+
+        <a
+          class="social"
+          href="https://telegram.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="social-icon">✈️</span>
+          <span>Telegram</span>
+        </a>
+
+        <a
+          class="social"
+          href="https://www.whatsapp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="social-icon">💬</span>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="support">
+        <h2>🚀 Keep Supporting</h2>
+        <p>
+          Thank you for visiting my profile! ❤️
+          Stay connected for more videos and photos.
+        </p>
+        <a
+          class="btn"
+          style="margin-top:16px"
+          href="https://www.instagram.com/ax___najmul___07/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Follow My Journey
         </a>
       </div>
     </section>
 
     <footer>
-      © 2026 ax___najmul___07 · All rights reserved
+      <p>© 2026 ax___najmul___07 · All rights reserved</p>
+      <p>❤️ Made with passion</p>
+      <p><a href="#home">⬆️ Back to Top</a></p>
     </footer>
 
   </main>
 </body>
-</html>
+  </html>
