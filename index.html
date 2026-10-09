@@ -1349,6 +1349,154 @@ updateScrollProgress();
   }
 }
 </style>
+ 
+<style>
+/* PREMIUM 3D PINK NEON MUSIC PLAYER */
+.music-player {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: min(92%, 440px);
+  margin: 30px auto;
+  padding: 22px;
+  color: #fff;
+  border: 1px solid rgba(255, 85, 200, .75);
+  border-radius: 26px;
+
+  background:
+    radial-gradient(
+      ellipse at top left,
+      rgba(255, 40, 170, .16),
+      transparent 60%
+    ),
+    linear-gradient(145deg, #1d1020, #07070c 75%);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, .5),
+    0 0 12px rgba(255, 40, 170, .4),
+    0 0 32px rgba(255, 40, 170, .18),
+    inset 0 1px 1px rgba(255, 255, 255, .12);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  transform-style: preserve-3d;
+  animation:
+    pink3DFloat 5s ease-in-out infinite,
+    pink3DGlow 3s ease-in-out infinite alternate;
+
+  transition: box-shadow .35s ease, border-color .35s ease;
+}
+
+/* Rotating neon ring */
+.music-player::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: -100%;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 230deg,
+    #ff168f 260deg,
+    #ff8cde 290deg,
+    #a855f7 315deg,
+    transparent 345deg,
+    transparent 360deg
+  );
+
+  animation: pinkRingRotate 7s linear infinite;
+  pointer-events: none;
+}
+
+/* Inner glass surface */
+.music-player::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 2px;
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(255, 70, 190, .10),
+      transparent 45%
+    ),
+    linear-gradient(145deg, #190f1d, #08080d);
+
+  pointer-events: none;
+}
+
+.music-player h3,
+.music-player .song-title {
+  color: #ff8bd5;
+  text-shadow:
+    0 0 6px rgba(255, 70, 190, .8),
+    0 0 18px rgba(255, 30, 160, .45);
+  transform: translateZ(18px);
+}
+
+.music-player .song-subtitle {
+  color: #eaa5d0;
+}
+
+.music-player audio {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 14px;
+  transform: translateZ(10px);
+}
+
+.music-player:hover {
+  border-color: #ff8cde;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, .55),
+    0 0 18px rgba(255, 40, 170, .5),
+    0 0 40px rgba(255, 40, 170, .25);
+}
+
+@keyframes pink3DFloat {
+  0%, 100% {
+    transform: perspective(900px)
+      rotateX(0deg) rotateY(-1deg) translateY(0);
+  }
+  50% {
+    transform: perspective(900px)
+      rotateX(2deg) rotateY(1deg) translateY(-7px);
+  }
+}
+
+@keyframes pink3DGlow {
+  from {
+    filter: drop-shadow(0 0 4px rgba(255, 30, 160, .12));
+  }
+  to {
+    filter: drop-shadow(0 0 12px rgba(255, 30, 160, .28));
+  }
+}
+
+@keyframes pinkRingRotate {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-player,
+  .music-player::before {
+    animation: none;
+  }
+
+  .music-player,
+  .music-player:hover {
+    transform: none;
+  }
+}
+  </style>
   
 </body>
   </html>
