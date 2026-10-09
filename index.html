@@ -1497,6 +1497,103 @@ updateScrollProgress();
   }
 }
   </style>
+ 
+<!-- Pink Neon Hamburger Menu -->
+<div class="pink-nav">
+  <a class="pink-nav-brand" href="#">♡ Najmul</a>
+  <button class="pink-menu-btn" id="pinkMenuBtn"
+    aria-label="Open menu" aria-expanded="false"
+    aria-controls="pinkMenuLinks" type="button">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="pink-menu-links" id="pinkMenuLinks">
+    <a href="#">🏠 Home</a>
+    <a href="#about">👤 About</a>
+    <a href="#posts">📝 Posts</a>
+    <a href="#gallery">🖼️ Gallery</a>
+    <a href="#contact">💌 Connect With Me</a>
+  </nav>
+</div>
+
+<style>
+.pink-nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(8,8,14,.95);
+  border-bottom: 1px solid #ff168f;
+  box-shadow: 0 0 18px #ff168f44;
+}
+.pink-nav-brand {
+  color: #ff78cb;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.pink-menu-btn {
+  width: 46px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #ff45b8;
+  border-radius: 12px;
+  background: #1b0c1b;
+}
+.pink-menu-btn span {
+  width: 23px;
+  height: 2px;
+  background: #ff78cb;
+  box-shadow: 0 0 8px #ff168f;
+}
+.pink-menu-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  width: 230px;
+  padding: 10px;
+  background: #100914;
+  border: 1px solid #ff45b8;
+  border-radius: 14px;
+  box-shadow: 0 0 22px #ff168f55;
+}
+.pink-menu-links.is-open {
+  display: grid;
+}
+.pink-menu-links a {
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+}
+.pink-menu-links a:hover {
+  color: #ff78cb;
+  background: #ff168f22;
+}
+</style>
+
+<script>
+const menuBtn = document.getElementById("pinkMenuBtn");
+const menuLinks = document.getElementById("pinkMenuLinks");
+
+menuBtn.addEventListener("click", () => {
+  const open = menuLinks.classList.toggle("is-open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+});
+
+menuLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    menuLinks.classList.remove("is-open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+</script>
   
 </body>
   </html>
