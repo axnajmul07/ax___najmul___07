@@ -1577,7 +1577,26 @@ updateScrollProgress();
   overflow: hidden;
   border-radius: 50%;
 }
-  
+  /* 360 Degree VIP Logo Rotation */
+.container header .profile {
+  animation: vipLogoRotate 12s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes vipLogoRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container header .profile {
+    animation: none;
+  }
+  }
   </style>
  
 <!-- Pink Neon Hamburger Menu -->
