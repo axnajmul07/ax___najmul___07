@@ -581,7 +581,41 @@
     animation: none;
   }
 }
-    
+ /* Neon Glow Text Animation */
+.container header h1,
+.container .section-title {
+  color: #fff;
+  animation: neonGlow 2.5s ease-in-out infinite alternate;
+}
+
+.container .username {
+  animation: neonGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+  0% {
+    text-shadow: 0 0 5px #ff0055,
+                 0 0 10px #ff0055;
+  }
+  50% {
+    text-shadow: 0 0 10px #ff7a00,
+                 0 0 22px #ff7a00,
+                 0 0 35px #ff0055;
+  }
+  100% {
+    text-shadow: 0 0 8px #ff0055,
+                 0 0 18px #ff0055,
+                 0 0 30px #ff7a00;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container header h1,
+  .container .username,
+  .container .section-title {
+    animation: none;
+  }
+}   
   </style>
 </head>
 
