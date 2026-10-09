@@ -1496,6 +1496,70 @@ updateScrollProgress();
     transform: none;
   }
 }
+/* Pink Neon Luxury — Home Page Only */
+.container header .profile {
+  border-color: #ff78cb;
+  box-shadow:
+    0 0 12px rgba(255, 20, 147, 0.65),
+    0 0 28px rgba(255, 20, 147, 0.35);
+  animation: homePinkGlow 3s ease-in-out infinite alternate;
+}
+
+.container .buttons .btn {
+  position: relative;
+  border: 1px solid rgba(255, 120, 203, 0.75);
+  background: linear-gradient(135deg, #210b20, #750044, #210b20);
+  background-size: 200% 200%;
+  box-shadow:
+    0 6px 0 #390022,
+    0 0 14px rgba(255, 20, 147, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: homeButtonGlow 4s ease-in-out infinite;
+}
+
+.container .buttons .btn:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 8px 0 #390022,
+    0 0 24px rgba(255, 20, 147, 0.65);
+}
+
+.container .buttons .btn:active {
+  transform: translateY(3px) scale(0.98);
+  box-shadow: 0 2px 0 #390022;
+}
+
+@keyframes homePinkGlow {
+  from {
+    filter: brightness(0.95);
+    box-shadow: 0 0 10px #ff149355;
+  }
+  to {
+    filter: brightness(1.12);
+    box-shadow:
+      0 0 18px #ff1493aa,
+      0 0 32px #ff45b855;
+  }
+}
+
+@keyframes homeButtonGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 6px 0 #390022, 0 0 12px #ff149344;
+  }
+  50% {
+    background-position: 100% 50%;
+    box-shadow: 0 6px 0 #390022, 0 0 22px #ff149377;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container header .profile,
+  .container .buttons .btn {
+    animation: none;
+  }
+}
+  
   </style>
  
 <!-- Pink Neon Hamburger Menu -->
