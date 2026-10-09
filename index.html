@@ -388,6 +388,40 @@
     transition: none;
   }
 }
+  
+/* 3D Neon Cards */
+.post,
+.gallery-item,
+.social {
+  position: relative;
+  transform: perspective(800px) translateZ(0);
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  border: 1px solid rgba(255, 0, 85, 0.35);
+  box-shadow:
+    0 8px 18px rgba(255, 0, 85, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.post:hover,
+.gallery-item:hover,
+.social:hover {
+  transform: perspective(800px)
+             translateY(-8px)
+             rotateX(3deg)
+             rotateY(-3deg);
+  border-color: #ff7a00;
+  box-shadow:
+    0 15px 30px rgba(255, 0, 85, 0.22),
+    0 0 20px rgba(255, 122, 0, 0.18);
+}
+
+.post:active,
+.gallery-item:active,
+.social:active {
+  transform: scale(0.97);
+}
     
   </style>
 </head>
