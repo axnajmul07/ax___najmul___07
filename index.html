@@ -1279,6 +1279,76 @@ updateScrollProgress();
   width: 100%;
   height: 40px;
 }
-</style>  
+</style>
+<style>
+/* Premium Black Glass Pink Neon Music Player */
+.music-player {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: min(88%, 420px);
+  margin: 28px auto;
+  padding: 20px;
+  color: #fff;
+  background: linear-gradient(145deg, #211326, #050509 75%);
+  border: 1px solid rgba(255, 80, 190, .65);
+  border-radius: 22px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, .5),
+    0 0 22px rgba(255, 50, 180, .3),
+    inset 0 0 18px rgba(255, 80, 190, .08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  animation: pinkPlayerFloat 4s ease-in-out infinite;
+}
+
+.music-player h3,
+.music-player .song-title {
+  color: #ff8bd5;
+  text-shadow: 0 0 12px rgba(255, 65, 185, .7);
+}
+
+.music-player audio {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  position: relative;
+}
+
+.music-player::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  border: 1px solid #ff36b7;
+  box-shadow: 0 0 14px rgba(255, 54, 183, .35);
+  animation: pinkPlayerGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pinkPlayerFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pinkPlayerGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 54, 183, .25);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(255, 54, 183, .65);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-player,
+  .music-player::before {
+    animation: none;
+  }
+}
+</style>
+  
 </body>
   </html>
