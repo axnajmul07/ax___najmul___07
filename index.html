@@ -1239,6 +1239,46 @@ updateScrollProgress();
    rel="noopener noreferrer">
   💚 Follow My WhatsApp Channel
 </a>
-  
+<div class="music-player">
+  <div class="song-info">
+    <span class="song-title">Dil Ibaadat</span>
+    <span class="song-subtitle">Now Playing ♡</span>
+  </div>
+
+  <audio controls preload="metadata">
+    <source src="./dil-ibaadat.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+</div>
+
+<style>
+.music-player {
+  background: rgba(12, 12, 15, 0.95);
+  border: 1px solid #383039;
+  border-radius: 16px;
+  padding: 16px;
+  color: white;
+  box-shadow: 0 0 18px rgba(255, 80, 160, 0.12);
+  max-width: 100%;
+}
+.song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.song-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+.song-subtitle {
+  font-size: 12px;
+  color: #f08bb8;
+}
+.music-player audio {
+  width: 100%;
+  height: 40px;
+}
+</style>  
 </body>
   </html>
