@@ -243,29 +243,36 @@
         🔥 My Posts
       </h2>
 
-      <div class="posts">
-        <a
-          class="post"
-          href="https://www.instagram.com/reel/DdyunN0SRJl/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Watch Instagram Reel"
-        >
-          <span class="post-icon" aria-hidden="true">▶️</span>
-          <span>Watch Reel</span>
-        </a>
+    .post {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  background: #181818;
+}
 
-        <a
-          class="post"
-          href="https://www.instagram.com/ax___najmul___07/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View Instagram photos"
-        >
-          <span class="post-icon" aria-hidden="true">📸</span>
-          <span>Instagram Photos</span>
-        </a>
-      </div>
+.post-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-label {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 35px 8px 14px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(transparent, #000);
+}
     </section>
 
     <footer>
