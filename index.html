@@ -335,6 +335,59 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
   }
+  
+/* 3D Neon Glow Animation */
+
+.posts,
+.gallery,
+.socials {
+  perspective: 1000px;
+}
+
+.post,
+.gallery-item,
+.social {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  border: 1px solid rgba(255, 0, 85, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.post:hover,
+.gallery-item:hover,
+.social:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
+  border-color: #ff7a00;
+  box-shadow:
+    0 15px 30px rgba(255, 0, 85, 0.2),
+    0 0 18px rgba(255, 122, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+  .post,
+  .gallery-item,
+  .social {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .post:active,
+  .gallery-item:active,
+  .social:active {
+    transform: scale(0.96) translateY(-3px);
+    box-shadow: 0 0 18px rgba(255, 0, 85, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post,
+  .gallery-item,
+  .social {
+    transition: none;
+  }
+}
     
   </style>
 </head>
