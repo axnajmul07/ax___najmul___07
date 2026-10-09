@@ -1524,7 +1524,7 @@ updateScrollProgress();
 
   
 
-.pink-nav {
+<style>.pink-nav {
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -1612,17 +1612,22 @@ updateScrollProgress();
 const menuBtn = document.getElementById("pinkMenuBtn");
 const menuLinks = document.getElementById("pinkMenuLinks");
 
-menuBtn.addEventListener("click", () => {
-  const open = menuLinks.classList.toggle("is-open");
-  menuBtn.setAttribute("aria-expanded", String(open));
-});
-
-menuLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    menuLinks.classList.remove("is-open");
-    menuBtn.setAttribute("aria-expanded", "false");
+if (menuBtn && menuLinks) {
+  menuBtn.addEventListener("click", () => {
+    menuLinks.classList.toggle("is-open");
+    const open = menuLinks.classList.contains("is-open");
+    menuBtn.setAttribute("aria-expanded", String(open));
   });
-});
+}
+
+if (menuLinks && menuBtn) {
+  menuLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuLinks.classList.remove("is-open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
 document.getElementById("shareWebsiteBtn").addEventListener("click", async () => {
   const shareData = {
