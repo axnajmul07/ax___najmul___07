@@ -1506,6 +1506,10 @@ updateScrollProgress();
     aria-controls="pinkMenuLinks" type="button">
     <span></span><span></span><span></span>
   </button>
+<button id="shareWebsiteBtn" type="button" aria-label="Share Website">
+  ↗ Share
+</button>
+  
   <nav class="pink-menu-links" id="pinkMenuLinks">
     <a href="#">🏠 Home</a>
     <a href="#about">👤 About</a>
@@ -1518,7 +1522,25 @@ updateScrollProgress();
   </nav>
 </div>
 
-<style>
+#shareWebsiteBtn {
+  position: fixed;
+  top: 12px;
+  right: 82px;
+  z-index: 100000;
+  height: 58px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  background: rgba(12,12,18,0.88);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 0 14px rgba(255,255,255,0.08);
+}
+  
+
 .pink-nav {
   position: sticky;
   top: 0;
@@ -1618,7 +1640,28 @@ menuLinks.querySelectorAll("a").forEach(link => {
     menuBtn.setAttribute("aria-expanded", "false");
   });
 });
-</script>
-  
+
+document.getElementById("shareWebsiteBtn").addEventListener("click", async () => {
+  const shareData = {
+    title: "Ax Najmul Creator",
+    text: "मेरी वेबसाइट देखें!",
+    url: "https://axnajmul07.github.io/ax___najmul___07/"
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (error) {
+      console.log("Share cancelled");
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      alert("Website link copied!");
+    } catch (error) {
+      prompt("अपनी वेबसाइट का लिंक कॉपी करें:", shareData.url);
+    }
+  }
+}); </script>
 </body>
   </html>
