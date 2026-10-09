@@ -615,7 +615,45 @@
   .container .section-title {
     animation: none;
   }
-}   
+}  
+/* Username Typing Animation */
+.container header h1 {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 2px solid #ff0055;
+  width: 17ch;
+  animation:
+    typingEffect 3s steps(17, end) infinite alternate,
+    cursorBlink 0.7s step-end infinite,
+    neonGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes typingEffect {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17ch;
+  }
+}
+
+@keyframes cursorBlink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container header h1 {
+    animation: none;
+    border-right: none;
+    width: auto;
+  }
+}
+    
   </style>
 </head>
 
