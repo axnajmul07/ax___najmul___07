@@ -308,6 +308,33 @@
   opacity: 1;
   transform: translateY(0);
 }
+   
+/* Animated Gradient Buttons */
+.btn,
+.social {
+  background: linear-gradient(
+    90deg,
+    #ff0055,
+    #ff7a00,
+    #ff0055
+  );
+  background-size: 200% 200%;
+  animation: gradientFlow 4s ease infinite;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.btn:hover,
+.social:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 22px rgba(255, 0, 85, 0.45);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+  }
     
   </style>
 </head>
