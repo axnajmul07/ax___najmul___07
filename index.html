@@ -701,6 +701,86 @@ main.container button:focus-visible {
     transform: none;
   }
 }
+ 
+/* Floating Neon Particles */
+.neon-particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.neon-particles span {
+  position: absolute;
+  bottom: -20px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff0055;
+  box-shadow:
+    0 0 8px #ff0055,
+    0 0 16px #ff7a00;
+  opacity: 0;
+  animation: floatNeon 12s linear infinite;
+}
+
+.neon-particles span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.neon-particles span:nth-child(2) {
+  left: 25%;
+  animation-delay: 3s;
+  background: #ff7a00;
+}
+
+.neon-particles span:nth-child(3) {
+  left: 40%;
+  animation-delay: 6s;
+}
+
+.neon-particles span:nth-child(4) {
+  left: 60%;
+  animation-delay: 1s;
+  background: #ff7a00;
+}
+
+.neon-particles span:nth-child(5) {
+  left: 75%;
+  animation-delay: 4s;
+}
+
+.neon-particles span:nth-child(6) {
+  left: 90%;
+  animation-delay: 7s;
+  background: #ff7a00;
+}
+
+@keyframes floatNeon {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-particles span {
+    animation: none;
+    display: none;
+  }
+}
     
   </style>
 </head>
