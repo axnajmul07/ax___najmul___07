@@ -1,169 +1,277 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ax___najmul___07</title>
+  <title>ax___najmul___07 | Creator</title>
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Follow ax___najmul___07 for Reels, videos and stories.">
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #080808;
-  color: white;
-  text-align: center;
-}
+    :root {
+      --bg: #080808;
+      --card: #181818;
+      --text: #ffffff;
+      --muted: #aaaaaa;
+      --pink: #ff0055;
+      --orange: #ff7a00;
+    }
 
-.container {
-  max-width: 650px;
-  margin: auto;
-  padding: 35px 20px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* PROFILE PHOTO */
-.profile {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 0 25px rgba(255, 90, 0, 0.6);
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      text-align: center;
+      line-height: 1.6;
+    }
 
-/* NAME */
-h1 {
-  margin-top: 20px;
-  font-size: 30px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.username {
-  color: #aaa;
-  margin-top: 7px;
-  font-size: 17px;
-}
+    .container {
+      width: 100%;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 38px 20px 24px;
+    }
 
-/* BIO */
-.bio {
-  margin: 20px auto;
-  line-height: 1.8;
-  color: #ddd;
-  font-size: 17px;
-}
+    /* PROFILE */
+    .profile {
+      display: block;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      object-fit: cover;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(255, 90, 0, 0.45);
+    }
 
-/* BUTTONS */
-.btn {
-  display: block;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(90deg, #ff0055, #ff7a00);
-  padding: 16px;
-  margin: 13px auto;
-  border-radius: 30px;
-  max-width: 420px;
-  font-weight: bold;
-  font-size: 17px;
-  box-shadow: 0 5px 20px rgba(255, 70, 0, 0.25);
-}
+    h1 {
+      margin-top: 20px;
+      font-size: clamp(24px, 6vw, 34px);
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
 
-.btn:hover {
-  transform: scale(1.02);
-}
+    .username {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 17px;
+    }
 
-/* POSTS */
-.section-title {
-  margin: 40px 0 18px;
-  font-size: 22px;
-}
+    .bio {
+      margin: 22px auto 28px;
+      color: #dddddd;
+      font-size: 17px;
+      line-height: 1.9;
+    }
 
-.posts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
+    /* BUTTONS */
+    .buttons {
+      display: grid;
+      gap: 14px;
+      margin: 0 auto;
+      max-width: 460px;
+    }
 
-.post {
-  aspect-ratio: 1 / 1;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #222, #555);
-  font-size: 32px;
-}
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 18px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      background: linear-gradient(100deg, var(--pink), var(--orange));
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 5px 20px rgba(255, 70, 0, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-/* FOOTER */
-footer {
-  margin-top: 40px;
-  color: #777;
-  font-size: 13px;
-}
-</style>
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 70, 0, 0.32);
+    }
+
+    .btn:focus-visible,
+    .post:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 4px;
+    }
+
+    /* POSTS */
+    .section-title {
+      margin: 40px 0 20px;
+      font-size: 25px;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .post {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: 0;
+      aspect-ratio: 1 / 1;
+      padding: 14px;
+      border: 1px solid #303030;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #222222, #111111);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-3px);
+      border-color: var(--orange);
+    }
+
+    .post-icon {
+      font-size: 38px;
+      line-height: 1;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 38px;
+      padding-top: 18px;
+      border-top: 1px solid #222;
+      color: #888;
+      font-size: 13px;
+    }
+
+    @media (max-width: 360px) {
+      .container {
+        padding: 28px 14px 20px;
+      }
+
+      .profile {
+        width: 125px;
+        height: 125px;
+      }
+
+      .posts {
+        gap: 10px;
+      }
+
+      .post {
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="container">
 
-<div class="container">
+    <header>
+      <img
+        class="profile"
+        src="20260904_153946.png"
+        alt="ax___najmul___07 profile photo"
+      >
 
-  <!-- YOUR PHOTO -->
-  <img
-    class="profile"
-    src="20260904_153946.png"
-    alt="ax___najmul___07"
-  >
+      <h1>ax___najmul___07</h1>
+      <p class="username">@ax___najmul___07</p>
 
-  <h1>ax___najmul___07</h1>
+      <p class="bio">
+        🔥 Creator • Reels • Attitude<br>
+        🎬 New Videos &amp; Stories<br>
+        ❤️ Follow for more
+      </p>
+    </header>
 
-  <div class="username">
-    @ax___najmul___07
-  </div>
+    <nav class="buttons" aria-label="Social links">
+      <a
+        class="btn"
+        href="https://www.instagram.com/ax___najmul___07/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📸 Follow Me on Instagram
+      </a>
 
-  <p class="bio">
-    🔥 Creator • Reels • Attitude<br>
-    🎬 New Videos & Stories<br>
-    ❤️ Follow for more
-  </p>
+      <a class="btn" href="#reels">
+        🎬 Watch My Reels
+      </a>
+    </nav>
 
-  <!-- INSTAGRAM -->
-  <a
-    class="btn"
-    href="https://instagram.com/ax___najmul___07"
-    target="_blank"
-  >
-    📷 Follow Me on Instagram
-  </a>
+    <section id="reels" aria-labelledby="posts-heading">
+      <h2 class="section-title" id="posts-heading">
+        🔥 My Posts
+      </h2>
 
-  <!-- REELS -->
-  <a class="btn" href="#reels">
-    🎬 Watch My Reels
-  </a>
+      <div class="posts">
+        <a
+          class="post"
+          href="https://www.instagram.com/reel/DdyunN0SRJl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Watch Instagram Reel"
+        >
+          <span class="post-icon" aria-hidden="true">▶️</span>
+          <span>Watch Reel</span>
+        </a>
 
-  <h2 class="section-title" id="reels">
-    🔥 My Posts
-  </h2>
+        <a
+          class="post"
+          href="https://www.instagram.com/ax___najmul___07/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View Instagram photos"
+        >
+          <span class="post-icon" aria-hidden="true">📸</span>
+          <span>Instagram Photos</span>
+        </a>
+      </div>
+    </section>
 
-  <div class="posts">
-    
-<div class="posts">
-  <a class="post" href="https://www.instagram.com/reel/DdyunN0SRJl/" target="_blank" rel="noopener noreferrer">
-    ▶️ Watch Reel
-  </a>
-  <a class="post" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer">
-    📸 Instagram Photos
-  </a>
-</div>
-    
+    <footer>
+      © 2026 ax___najmul___07 · All rights reserved
+    </footer>
 
-  <footer>
-    © 2026 ax___najmul___07
-  </footer>
-
-</div>
-
+  </main>
 </body>
 </html>
