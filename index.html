@@ -1559,6 +1559,8 @@ updateScrollProgress();
     animation: none;
   }
 }
+
+  }
   
 /* Perfect Round DP Fix */
 .container header .profile img {
@@ -1567,9 +1569,14 @@ updateScrollProgress();
   aspect-ratio: 1 / 1;
   display: block;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   border-radius: 50%;
-  }
+}
+
+.container header .profile {
+  overflow: hidden;
+  border-radius: 50%;
+}
   
   </style>
  
