@@ -843,6 +843,47 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+/* Neon Spotlight Effect */
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(255, 0, 85, 0.20),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      rgba(255, 122, 0, 0.16),
+      transparent 35%
+    );
+  animation: neonSpotlightPulse 7s ease-in-out infinite alternate;
+}
+
+@keyframes neonSpotlightPulse {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
     
   </style>
 </head>
