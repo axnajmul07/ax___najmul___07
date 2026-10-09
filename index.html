@@ -653,6 +653,54 @@
     width: auto;
   }
 }
+ 
+/* Neon Glow Hover Effect */
+main.container a,
+main.container button {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* Glow on hover */
+main.container a:hover,
+main.container button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+  box-shadow:
+    0 0 10px rgba(255, 0, 85, 0.65),
+    0 0 22px rgba(255, 122, 0, 0.45);
+}
+
+/* Glow when tapped on mobile */
+main.container a:active,
+main.container button:active {
+  transform: scale(0.97);
+  filter: brightness(1.2);
+  box-shadow:
+    0 0 14px rgba(255, 0, 85, 0.75),
+    0 0 28px rgba(255, 122, 0, 0.55);
+}
+
+/* Keyboard accessibility */
+main.container a:focus-visible,
+main.container button:focus-visible {
+  outline: 2px solid #ff7a00;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main.container a,
+  main.container button {
+    transition: none;
+  }
+
+  main.container a:hover,
+  main.container button:hover {
+    transform: none;
+  }
+}
     
   </style>
 </head>
