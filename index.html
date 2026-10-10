@@ -3,1090 +3,253 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>ax___najmul___07 | Creator</title>
   <meta name="theme-color" content="#080808">
   <meta name="description" content="Creator profile, reels, photography and more.">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #080808;
-      --card: #151515;
-      --text: #fff;
-      --muted: #aaa;
-      --pink: #ff0055;
-      --orange: #ff7a00;
+      --bg: #080808; --card: rgba(15,10,25,.78); --text: #fff;
+      --muted: #aaa; --pink: #ff168f; --hot-pink: #ff78cb; --orange: #ff7a00;
     }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 20px;
-    }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      min-height: 100vh; background: #080808; color: var(--text);
+      font-family: Arial, sans-serif; line-height: 1.6; isolation: isolate;
+      background-image: linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.78)), url("./1789121662954.jpg");
+      background-size: cover; background-position: center top; background-repeat: no-repeat;
+      background-attachment: fixed;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(circle at 20% 25%,rgba(255,0,85,.18),transparent 32%),
+                  radial-gradient(circle at 80% 60%,rgba(255,122,0,.14),transparent 35%);
+      animation: spotlight 7s ease-in-out infinite alternate;
     }
-
-    .container {
-      max-width: 650px;
-      margin: auto;
-      padding: 28px 18px;
+    body::after {
+      content: ""; position: fixed; inset: 4px; z-index: 9998; pointer-events: none;
+      border: 1px solid rgba(255,0,140,.55); border-radius: 8px;
+      box-shadow: 0 0 5px rgba(255,0,140,.2), inset 0 0 5px rgba(0,200,255,.08);
     }
-
-    header {
-      text-align: center;
-      padding: 20px 0 10px;
-    }
-
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { max-width: 650px; margin: auto; padding: 28px 18px; position: relative; z-index: 1; }
+    header { text-align: center; padding: 20px 0 10px; }
     .profile {
-      width: 150px;
-      height: 150px;
-      display: block;
-      margin: 0 auto 20px;
-      object-fit: cover;
-      border: 4px solid white;
-      border-radius: 50%;
-      box-shadow: 0 0 28px #ff7a0055;
+      width: 150px; height: 150px; display: block; margin: 0 auto 20px;
+      object-fit: cover; object-position: center; border-radius: 50%; padding: 4px;
+      background: linear-gradient(#111,#111) padding-box,
+                  conic-gradient(#ff0055,#ff7a00,#fff176,#ff0055) border-box;
+      border: 4px solid transparent;
+      box-shadow: 0 0 16px rgba(255,0,85,.5),0 0 28px rgba(255,122,0,.22);
+      animation: ringGlow 4s linear infinite;
     }
-
-    h1 {
-      font-size: clamp(24px, 6vw, 32px);
-      overflow-wrap: anywhere;
-    }
-
-    .username {
-      color: var(--muted);
-      font-size: 17px;
-      margin-top: 5px;
-    }
-
-    .bio {
-      margin: 20px 0;
-      line-height: 2;
-      color: #ddd;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 22px 0;
-      text-align: center;
-    }
-
-    .stats strong {
-      display: block;
-      font-size: 18px;
-    }
-
-    .stats span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .buttons {
-      display: grid;
-      gap: 14px;
-      margin: 25px 0;
-    }
-
+    h1 { font-size: clamp(24px,6vw,32px); overflow-wrap: anywhere; display: inline-block; max-width: 100%; }
+    .username { color: var(--muted); font-size: 17px; margin-top: 5px; }
+    .bio { margin: 20px 0; line-height: 2; color: #ddd; }
+    .stats { display: flex; justify-content: center; gap: 30px; margin: 22px 0; text-align: center; }
+    .stats strong { display: block; font-size: 18px; }
+    .stats span { color: var(--muted); font-size: 12px; }
+    .buttons { display: grid; gap: 14px; margin: 25px 0; }
     .btn {
-      display: block;
-      padding: 15px 12px;
-      border-radius: 40px;
-      background: linear-gradient(
-        100deg, var(--pink), var(--orange)
-      );
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      box-shadow: 0 6px 22px #ff550022;
-      transition: transform .2s;
+      display: block; padding: 15px 12px; border: 1px solid rgba(255,120,203,.65);
+      border-radius: 40px; color: white; font-size: 16px; font-weight: bold; text-align: center;
+      background: linear-gradient(135deg,#210b20,#750044,#210b20); background-size: 200% 200%;
+      box-shadow: 0 6px 0 #390022,0 0 14px rgba(255,20,147,.25);
+      animation: buttonGlow 4s ease-in-out infinite;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .section {
-      margin-top: 42px;
-      padding-top: 25px;
-      border-top: 1px solid #292929;
-    }
-
-    .section-title {
-      font-size: 23px;
-      margin-bottom: 18px;
-    }
-
-    .posts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 0 22px rgba(255,20,147,.55); }
+    .section { margin-top: 42px; padding-top: 25px; border-top: 1px solid #292929; }
+    .section-title { font-size: 23px; margin-bottom: 18px; color: #fff; text-shadow: 0 0 10px #ff168f; }
+    .posts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; perspective: 1000px; }
     .post {
-      min-width: 0;
-      min-height: 190px;
-      aspect-ratio: 1 / 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 12px;
-      border: 1px solid #303030;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #222, #101010);
-      text-align: center;
-      overflow-wrap: anywhere;
-      transition: transform .2s, border-color .2s;
+      min-width: 0; min-height: 190px; aspect-ratio: 1/1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px; padding: 12px;
+      border: 1px solid rgba(255,0,85,.35); border-radius: 20px;
+      background: linear-gradient(145deg,rgba(34,24,36,.92),rgba(10,10,14,.9));
+      text-align: center; overflow-wrap: anywhere; box-shadow: 0 8px 20px rgba(0,0,0,.3);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     }
-
-    .post:hover {
-      transform: translateY(-3px);
-      border-color: var(--orange);
-    }
-
-    .post-icon {
-      font-size: 43px;
-      line-height: 1.3;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 7px;
-    }
-
+    .post:hover { transform: translateY(-5px); border-color: var(--orange); box-shadow: 0 0 20px #ff168f33; }
+    .post-icon { font-size: 43px; line-height: 1.3; }
+    .gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
     .gallery-item {
-      min-width: 0;
-      aspect-ratio: 3 / 4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      border: 1px solid #303030;
-      background: linear-gradient(145deg, #323232, #121212);
-      font-size: 32px;
-      overflow: hidden;
+      min-width: 0; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center;
+      border-radius: 12px; border: 1px solid rgba(255,50,180,.45);
+      background: rgba(15,10,25,.68); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      font-size: 32px; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease;
     }
-
-    .gallery-item:nth-child(3n + 1) {
-      background: linear-gradient(145deg, #70402b, #181818);
-    }
-
-    .gallery-item:nth-child(3n + 2) {
-      background: linear-gradient(145deg, #454545, #151515);
-    }
-
-    .about {
-      padding: 18px;
-      border: 1px solid #303030;
-      border-radius: 18px;
-      background: var(--card);
-    }
-
-    .about p {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 6px 0;
-      font-size: 14px;
-    }
-
-    .about span {
-      color: var(--muted);
-    }
-
-    .socials {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      text-align: center;
-    }
-
-    .social {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-    }
-
+    .gallery-item:nth-child(3n+1) { background: linear-gradient(145deg,#70402b,#181818); }
+    .gallery-item:nth-child(3n+2) { background: linear-gradient(145deg,#454545,#151515); }
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 0 18px #ff168f55; }
+    .about { padding: 18px; border: 1px solid #303030; border-radius: 18px; background: var(--card); }
+    .about p { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; font-size: 14px; }
+    .about span { color: var(--muted); }
+    .socials { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; text-align: center; }
+    .social { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; min-width: 0; }
     .social-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--pink);
-      border-radius: 50%;
-      background: #171117;
-      font-size: 22px;
+      width: 48px; height: 48px; display: grid; place-items: center;
+      border: 1px solid var(--pink); border-radius: 50%; background: #171117; font-size: 22px;
+      box-shadow: 0 0 12px #ff168f22; transition: transform .25s, box-shadow .25s;
     }
-
-    .support {
-      padding: 20px;
-      border: 1px solid #ff4b32;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #241020, #141414);
-      text-align: center;
+    .social:hover .social-icon { transform: translateY(-3px); box-shadow: 0 0 20px #ff168f77; }
+    .support { padding: 20px; border: 1px solid #ff4b9c; border-radius: 18px; background: linear-gradient(135deg,#241020,#141414); text-align: center; }
+    .support p { color: #ddd; font-size: 14px; margin-top: 8px; }
+    footer { margin-top: 42px; padding: 22px 0 10px; border-top: 1px solid #292929; color: #888; text-align: center; font-size: 12px; }
+    footer p+p { margin-top: 8px; }
+    .whatsapp-channel-btn {
+      display: block; width: calc(100% - 36px); max-width: 614px; box-sizing: border-box;
+      margin: 16px auto; padding: 16px 12px; text-align: center; color: #fff; font-size: 16px;
+      font-weight: bold; border-radius: 50px; background: linear-gradient(100deg,#075e54,#25d366,#128c7e);
+      border: 1px solid rgba(255,255,255,.35); box-shadow: 0 0 15px rgba(37,211,102,.35);
     }
-
-    .support p {
-      color: #ddd;
-      font-size: 14px;
-      margin-top: 8px;
+    .music-player {
+      position: relative; isolation: isolate; overflow: hidden; box-sizing: border-box;
+      width: min(92%,440px); margin: 28px auto; padding: 20px; color: #fff;
+      border: 1px solid rgba(255,85,200,.75); border-radius: 24px;
+      background: radial-gradient(ellipse at top left,rgba(255,40,170,.16),transparent 60%),linear-gradient(145deg,#1d1020,#07070c 75%);
+      box-shadow: 0 18px 45px rgba(0,0,0,.5),0 0 22px rgba(255,40,170,.22),inset 0 1px 1px rgba(255,255,255,.1);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      animation: playerFloat 5s ease-in-out infinite;
     }
-
-    footer {
-      margin-top: 42px;
-      padding: 22px 0 10px;
-      border-top: 1px solid #292929;
-      color: #888;
-      text-align: center;
-      font-size: 12px;
+    .song-info { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+    .song-title { color: #ff8bd5; font-size: 17px; font-weight: 700; text-shadow: 0 0 12px #ff41b977; }
+    .song-subtitle { color: #eaa5d0; font-size: 12px; }
+    .music-player audio { display: block; width: 100%; max-width: 100%; margin-top: 12px; }
+    .vip-counter {
+      width: calc(100% - 32px); max-width: 430px; min-height: 68px; margin: 12px auto 24px;
+      padding: 12px 15px; display: flex; align-items: center; justify-content: space-around; gap: 10px;
+      background: rgba(8,5,14,.92); border: 1px solid #ff42c8; border-radius: 18px;
+      box-shadow: 0 0 10px #ff23b947,inset 0 0 14px #ff23b912;
     }
-
-    footer p + p {
-      margin-top: 8px;
+    .vip-eye { color: #ff55ce; font-size: 30px; line-height: 1; text-shadow: 0 0 12px #ff35bd; }
+    .vip-number img { display: block; width: 95px; max-width: 100%; height: auto; border: 0; border-radius: 5px; }
+    .vip-label { display: flex; align-items: center; gap: 7px; color: #ff72d5; font-size: 10px; font-weight: 700; letter-spacing: 2px; white-space: nowrap; }
+    .vip-dot { width: 6px; height: 6px; flex-shrink: 0; background: #ff40c7; border-radius: 50%; box-shadow: 0 0 10px #ff40c7; }
+    .neon-particles { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+    .neon-particles span { position: absolute; bottom: -20px; width: 4px; height: 4px; border-radius: 50%; background: #ff0055; box-shadow: 0 0 8px #ff0055,0 0 16px #ff7a00; opacity: 0; animation: floatNeon 12s linear infinite; }
+    .neon-particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .neon-particles span:nth-child(2) { left: 25%; animation-delay: 3s; background: #ff7a00; }
+    .neon-particles span:nth-child(3) { left: 40%; animation-delay: 6s; }
+    .neon-particles span:nth-child(4) { left: 60%; animation-delay: 1s; background: #ff7a00; }
+    .neon-particles span:nth-child(5) { left: 75%; animation-delay: 4s; }
+    .neon-particles span:nth-child(6) { left: 90%; animation-delay: 7s; background: #ff7a00; }
+    #scroll-progress { position: fixed; top: 0; left: 0; width: 100%; height: 4px; z-index: 100001; background: #ffffff14; pointer-events: none; }
+    #scroll-progress-bar { width: 0%; height: 100%; background: linear-gradient(90deg,#ff0055,#ff7a00); box-shadow: 0 0 10px #ff0055a6; }
+    .pink-nav {
+      position: sticky; top: 0; z-index: 10000; display: flex; align-items: center;
+      justify-content: space-between; gap: 12px; padding: 12px 18px;
+      background: rgba(8,8,14,.96); border-bottom: 1px solid #ff168f;
+      box-shadow: 0 0 18px #ff168f44;
     }
-
+    .pink-nav-brand { color: #ff78cb; font-size: 20px; font-weight: bold; white-space: nowrap; }
+    .pink-nav-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+    #shareWebsiteBtn {
+      border: 1px solid #ff45b8; border-radius: 10px; padding: 9px 12px;
+      color: #fff; background: #1b0c1b; cursor: pointer;
+    }
+    .pink-menu-btn {
+      width: 46px; height: 42px; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 6px; border: 1px solid #ff45b8; border-radius: 12px;
+      background: #1b0c1b; box-shadow: 0 0 12px #ff168f; cursor: pointer; flex-shrink: 0;
+    }
+    .pink-menu-btn span { display: block; width: 23px; height: 2px; background: #ff78cb; box-shadow: 0 0 8px #ff168f; }
+    .pink-menu-links {
+      display: none; position: absolute; top: calc(100% + 8px); right: 12px; width: min(260px,calc(100vw - 24px));
+      padding: 10px; background: #100914; border: 1px solid #ff45b8; border-radius: 14px;
+      box-shadow: 0 0 22px #ff168f55;
+    }
+    .pink-menu-links.is-open { display: grid; }
+    .pink-menu-links a { padding: 12px; color: white; border-radius: 8px; }
+    .pink-menu-links a:hover { color: #ff78cb; background: #ff168f22; }
+    .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease,transform .6s ease; }
+    .scroll-reveal.show { opacity: 1; transform: translateY(0); }
+    @keyframes spotlight { from { opacity: .45; } to { opacity: 1; } }
+    @keyframes ringGlow { 0%,100% { filter: brightness(.95); } 50% { filter: brightness(1.15); } }
+    @keyframes buttonGlow { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    @keyframes playerFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes floatNeon {
+      0% { transform: translateY(0) scale(.5); opacity: 0; }
+      15% { opacity: .8; } 85% { opacity: .6; }
+      100% { transform: translateY(-100vh) scale(1.4); opacity: 0; }
+    }
     @media (max-width: 380px) {
-      .container {
-        padding: 20px 12px;
-      }
-
-      .post {
-        min-height: 150px;
-      }
-
-      .post-icon {
-        font-size: 35px;
-      }
-
-      .stats {
-        gap: 20px;
-      }
+      .container { padding: 20px 12px; }
+      .post { min-height: 150px; }
+      .post-icon { font-size: 35px; }
+      .stats { gap: 20px; }
+      .pink-nav { padding: 10px 12px; }
+      .pink-nav-brand { font-size: 18px; }
+      #shareWebsiteBtn { padding: 8px 9px; }
+      .vip-counter { gap: 7px; padding: 10px; }
+      .vip-label { font-size: 9px; letter-spacing: 1px; }
+      .vip-number img { width: 75px; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { animation: none !important; transition: none !important; }
+      .scroll-reveal { opacity: 1; transform: none; }
     }
-/* Scroll Animation */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease,
-              transform 0.7s ease;
-}
-
-.scroll-reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-   
-/* Animated Gradient Buttons */
-.btn,
-.social {
-  background: linear-gradient(
-    90deg,
-    #ff0055,
-    #ff7a00,
-    #ff0055
-  );
-  background-size: 200% 200%;
-  animation: gradientFlow 4s ease infinite;
-  transition: transform 0.3s ease,
-              box-shadow 0.3s ease;
-}
-
-.btn:hover,
-.social:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 0 22px rgba(255, 0, 85, 0.45);
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-  }
-  
-/* 3D Neon Glow Animation */
-
-.posts,
-.gallery,
-.socials {
-  perspective: 1000px;
-}
-
-.post,
-.gallery-item,
-.social {
-  transform-style: preserve-3d;
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease,
-    border-color 0.4s ease;
-  border: 1px solid rgba(255, 0, 85, 0.18);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.post:hover,
-.gallery-item:hover,
-.social:hover {
-  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
-  border-color: #ff7a00;
-  box-shadow:
-    0 15px 30px rgba(255, 0, 85, 0.2),
-    0 0 18px rgba(255, 122, 0, 0.15);
-}
-
-@media (max-width: 600px) {
-  .post,
-  .gallery-item,
-  .social {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .post:active,
-  .gallery-item:active,
-  .social:active {
-    transform: scale(0.96) translateY(-3px);
-    box-shadow: 0 0 18px rgba(255, 0, 85, 0.3);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .post,
-  .gallery-item,
-  .social {
-    transition: none;
-  }
-}
-  
-/* 3D Neon Cards */
-.post,
-.gallery-item,
-.social {
-  position: relative;
-  transform: perspective(800px) translateZ(0);
-  transition: transform 0.35s ease,
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
-  border: 1px solid rgba(255, 0, 85, 0.35);
-  box-shadow:
-    0 8px 18px rgba(255, 0, 85, 0.08),
-    0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-.post:hover,
-.gallery-item:hover,
-.social:hover {
-  transform: perspective(800px)
-             translateY(-8px)
-             rotateX(3deg)
-             rotateY(-3deg);
-  border-color: #ff7a00;
-  box-shadow:
-    0 15px 30px rgba(255, 0, 85, 0.22),
-    0 0 20px rgba(255, 122, 0, 0.18);
-}
-
-.post:active,
-.gallery-item:active,
-.social:active {
-  transform: scale(0.97);
-}
-
-/* 3D Rotating Neon Cards */
-
-.post,
-.gallery-item,
-.social {
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  animation: cardTilt3D 6s ease-in-out infinite;
-  will-change: transform;
-  transition: box-shadow 0.4s ease,
-              border-color 0.4s ease;
-}
-
-/* Stagger the animation */
-.post:nth-child(2),
-.gallery-item:nth-child(2),
-.social:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-.post:nth-child(3),
-.gallery-item:nth-child(3),
-.social:nth-child(3) {
-  animation-delay: 1s;
-}
-
-/* Gentle 3D rocking effect */
-@keyframes cardTilt3D {
-  0%, 100% {
-    transform: perspective(900px)
-               rotateX(0deg) rotateY(0deg)
-               translateY(0);
-  }
-
-  25% {
-    transform: perspective(900px)
-               rotateX(2deg) rotateY(-3deg)
-               translateY(-3px);
-  }
-
-  50% {
-    transform: perspective(900px)
-               rotateX(0deg) rotateY(0deg)
-               translateY(-5px);
-  }
-
-  75% {
-    transform: perspective(900px)
-               rotateX(-2deg) rotateY(3deg)
-               translateY(-2px);
-  }
-}
-
-/* Neon glow on hover */
-.post:hover,
-.gallery-item:hover,
-.social:hover {
-  animation-play-state: paused;
-  border-color: #ff7a00;
-  box-shadow:
-    0 12px 28px rgba(255, 0, 85, 0.25),
-    0 0 20px rgba(255, 122, 0, 0.2);
-}
-
-/* Mobile touch effect */
-.post:active,
-.gallery-item:active,
-.social:active {
-  animation-play-state: paused;
-  transform: scale(0.97);
-}
-
-/* Respect reduced-motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .post,
-  .gallery-item,
-  .social {
-    animation: none;
-    will-change: auto;
-  }
-}
- 
-/* Scroll Progress Bar */
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  z-index: 99999;
-  background: rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-
-#scroll-progress-bar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    #ff0055,
-    #ff7a00
-  );
-  box-shadow: 0 0 10px rgba(255, 0, 85, 0.65);
-}
-
-/* Glowing Profile Ring Animation */
-@property --ring-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.profile {
-  border: 5px solid transparent;
-  border-radius: 50%;
-  background:
-    linear-gradient(#111, #111) padding-box,
-    conic-gradient(
-      from var(--ring-angle),
-      #ff0055,
-      #ff7a00,
-      #fff176,
-      #ff0055
-    ) border-box;
-  animation: profileRingGlow 4s linear infinite;
-  box-shadow:
-    0 0 12px rgba(255, 0, 85, 0.45),
-    0 0 25px rgba(255, 122, 0, 0.25);
-}
-
-@keyframes profileRingGlow {
-  0% {
-    --ring-angle: 0deg;
-    box-shadow:
-      0 0 12px rgba(255, 0, 85, 0.45),
-      0 0 25px rgba(255, 122, 0, 0.25);
-  }
-
-  50% {
-    --ring-angle: 180deg;
-    box-shadow:
-      0 0 20px rgba(255, 122, 0, 0.65),
-      0 0 32px rgba(255, 0, 85, 0.35);
-  }
-
-  100% {
-    --ring-angle: 360deg;
-    box-shadow:
-      0 0 12px rgba(255, 0, 85, 0.45),
-      0 0 25px rgba(255, 122, 0, 0.25);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .profile {
-    animation: none;
-  }
-}
- /* Neon Glow Text Animation */
-.container header h1,
-.container .section-title {
-  color: #fff;
-  animation: neonGlow 2.5s ease-in-out infinite alternate;
-}
-
-.container .username {
-  animation: neonGlow 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 5px #ff0055,
-                 0 0 10px #ff0055;
-  }
-  50% {
-    text-shadow: 0 0 10px #ff7a00,
-                 0 0 22px #ff7a00,
-                 0 0 35px #ff0055;
-  }
-  100% {
-    text-shadow: 0 0 8px #ff0055,
-                 0 0 18px #ff0055,
-                 0 0 30px #ff7a00;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .container header h1,
-  .container .username,
-  .container .section-title {
-    animation: none;
-  }
-}  
-/* Username Typing Animation */
-.container header h1 {
-  display: inline-block;
-  max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  vertical-align: bottom;
-  border-right: 2px solid #ff0055;
-  width: 17ch;
-  animation:
-    typingEffect 3s steps(17, end) infinite alternate,
-    cursorBlink 0.7s step-end infinite,
-    neonGlow 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes typingEffect {
-  from {
-    width: 0;
-  }
-  to {
-    width: 17ch;
-  }
-}
-
-@keyframes cursorBlink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .container header h1 {
-    animation: none;
-    border-right: none;
-    width: auto;
-  }
-}
- 
-/* Neon Glow Hover Effect */
-main.container a,
-main.container button {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    filter 0.3s ease;
-}
-
-/* Glow on hover */
-main.container a:hover,
-main.container button:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.12);
-  box-shadow:
-    0 0 10px rgba(255, 0, 85, 0.65),
-    0 0 22px rgba(255, 122, 0, 0.45);
-}
-
-/* Glow when tapped on mobile */
-main.container a:active,
-main.container button:active {
-  transform: scale(0.97);
-  filter: brightness(1.2);
-  box-shadow:
-    0 0 14px rgba(255, 0, 85, 0.75),
-    0 0 28px rgba(255, 122, 0, 0.55);
-}
-
-/* Keyboard accessibility */
-main.container a:focus-visible,
-main.container button:focus-visible {
-  outline: 2px solid #ff7a00;
-  outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  main.container a,
-  main.container button {
-    transition: none;
-  }
-
-  main.container a:hover,
-  main.container button:hover {
-    transform: none;
-  }
-}
- 
-/* Floating Neon Particles */
-.neon-particles {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.neon-particles span {
-  position: absolute;
-  bottom: -20px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #ff0055;
-  box-shadow:
-    0 0 8px #ff0055,
-    0 0 16px #ff7a00;
-  opacity: 0;
-  animation: floatNeon 12s linear infinite;
-}
-
-.neon-particles span:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.neon-particles span:nth-child(2) {
-  left: 25%;
-  animation-delay: 3s;
-  background: #ff7a00;
-}
-
-.neon-particles span:nth-child(3) {
-  left: 40%;
-  animation-delay: 6s;
-}
-
-.neon-particles span:nth-child(4) {
-  left: 60%;
-  animation-delay: 1s;
-  background: #ff7a00;
-}
-
-.neon-particles span:nth-child(5) {
-  left: 75%;
-  animation-delay: 4s;
-}
-
-.neon-particles span:nth-child(6) {
-  left: 90%;
-  animation-delay: 7s;
-  background: #ff7a00;
-}
-
-@keyframes floatNeon {
-  0% {
-    transform: translateY(0) scale(0.5);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.8;
-  }
-  85% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-100vh) scale(1.4);
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .neon-particles span {
-    animation: none;
-    display: none;
-  }
-}
- 
-/* Glassmorphism Cards */
-.container .post-card,
-.container .gallery-item {
-  background: rgba(255, 255, 255, 0.07);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-/* Glass glow on hover */
-.container .post-card:hover,
-.container .gallery-item:hover {
-  background: rgba(255, 255, 255, 0.11);
-  border-color: rgba(255, 70, 120, 0.55);
-  box-shadow:
-    0 0 16px rgba(255, 0, 85, 0.16),
-    0 10px 28px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-}
-
-/* Mobile tap feedback */
-.container .post-card:active,
-.container .gallery-item:active {
-  transform: scale(0.98);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .container .post-card,
-  .container .gallery-item {
-    transition: none;
-  }
-
-  .container .post-card:hover,
-  .container .gallery-item:hover {
-    transform: none;
-  }
-}
- 
-/* Your Personal Photo Background */
-body {
-  background-color: #080808;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0.60),
-      rgba(0, 0, 0, 0.72)
-    ),
-    url("./1789121662954.jpg");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Neon Spotlight Effect */
-body {
-  position: relative;
-  isolation: isolate;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      circle at 20% 25%,
-      rgba(255, 0, 85, 0.20),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 80% 60%,
-      rgba(255, 122, 0, 0.16),
-      transparent 35%
-    );
-  animation: neonSpotlightPulse 7s ease-in-out infinite alternate;
-}
-
-@keyframes neonSpotlightPulse {
-  from {
-    opacity: 0.45;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before {
-    animation: none;
-  }
-}
-
-/* ✨ Premium Neon Frame */
-body {
-  position: relative;
-  min-height: 100vh;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 4px;
-  border: 1px solid rgba(255, 0, 140, 0.75);
-  border-radius: 8px;
-  box-shadow:
-    0 0 5px rgba(255, 0, 140, 0.3),
-    inset 0 0 5px rgba(0, 200, 255, 0.12);
-  pointer-events: none;
-  z-index: 9999;
-}
-
-/* 🌈 Neon Buttons */
-.container a,
-.container button {
-  transition: all 0.3s ease;
-}
-
-.container a:hover,
-.container button:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 0 10px #ff1493,
-    0 0 22px rgba(255, 20, 147, 0.45);
-}
-
-/* 🪟 Glassmorphism Cards */
-.container .post-card,
-.container .gallery-item {
-  background: rgba(15, 10, 25, 0.58);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 50, 180, 0.65);
-  border-radius: 18px;
-  box-shadow: 0 0 12px rgba(255, 20, 147, 0.16);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container .post-card:hover,
-.container .gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 0 12px rgba(255, 20, 147, 0.55),
-    0 0 22px rgba(255, 140, 0, 0.2);
-}
-
-/* 📱 Mobile Friendly */
-img {
-  max-width: 100%;
-  height: auto;
-    }
- 
-/* 💚 WhatsApp Channel Button */
-.whatsapp-channel-btn {
-  display: block;
-  width: 90%;
-  box-sizing: border-box;
-  margin: 16px auto;
-  padding: 18px 12px;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  font-size: 17px;
-  font-weight: bold;
-  border-radius: 50px;
-  background: linear-gradient(100deg, #075e54, #25d366, #128c7e);
-  border: 1px solid rgba(255,255,255,0.35);
-  box-shadow: 0 0 15px rgba(37,211,102,0.45);
-  transition: 0.3s ease;
-}
-
-.whatsapp-channel-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(37,211,102,0.8);
-}
-    
   </style>
 </head>
 
 <body>
-<div class="neon-particles" aria-hidden="true">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-  
-<div id="scroll-progress">
-  <div id="scroll-progress-bar"></div>
-</div>
-  
+  <div class="neon-particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div id="scroll-progress" aria-hidden="true"><div id="scroll-progress-bar"></div></div>
+
+  <nav class="pink-nav" aria-label="Main navigation">
+    <a class="pink-nav-brand" href="#home">♡ Najmul</a>
+    <div class="pink-nav-actions">
+      <button id="shareWebsiteBtn" type="button">↗ Share</button>
+      <button class="pink-menu-btn" id="pinkMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="pinkMenuLinks" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="pink-menu-links" id="pinkMenuLinks">
+      <a href="#home">🏠 Home</a>
+      <a href="#about">👤 About</a>
+      <a href="#reels">📝 Posts</a>
+      <a href="#gallery">🖼️ Gallery</a>
+      <a href="upi://pay?pa=mirnajmul23-4@oksbi&amp;pn=najmulmir&amp;cu=INR">💖 Support Me / Pay Now</a>
+      <a href="#connect">💌 Connect With Me</a>
+    </div>
+  </nav>
+
   <main class="container">
-
     <header id="home">
-      <img
-        class="profile"
-        src="20260904_153946.png"
-        alt="ax___najmul___07 profile photo"
-      >
-
+      <img class="profile" src="20260904_153946.png" alt="ax___najmul___07 profile photo">
       <h1>ax___najmul___07</h1>
       <p class="username">@ax___najmul___07</p>
-
-      <p class="bio">
-        🔥 Creator · Reels · Attitude<br>
-        🎬 New Videos &amp; Stories<br>
-        ❤️ Follow for more
-      </p>
-
+      <p class="bio">🔥 Creator · Reels · Attitude<br>🎬 New Videos &amp; Stories<br>❤️ Follow for more</p>
       <div class="stats">
-        <div>
-          <strong>Creator</strong>
-          <span>Profile</span>
-        </div>
-        <div>
-          <strong>Reels</strong>
-          <span>Videos</span>
-        </div>
-        <div>
-          <strong>Photos</strong>
-          <span>Gallery</span>
-        </div>
+        <div><strong>Creator</strong><span>Profile</span></div>
+        <div><strong>Reels</strong><span>Videos</span></div>
+        <div><strong>Photos</strong><span>Gallery</span></div>
       </div>
     </header>
 
     <nav class="buttons" aria-label="Profile links">
-      <a
-        class="btn"
-        href="https://www.instagram.com/ax___najmul___07/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        📸 Follow Me on Instagram
-      </a>
-
-      <a class="btn" href="#reels">
-        🎬 Watch My Reels
-      </a>
-
-      <a class="btn" href="#gallery">
-        🖼️ Explore My Gallery
-      </a>
+      <a class="btn" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer">📸 Follow Me on Instagram</a>
+      <a class="btn" href="#reels">🎬 Watch My Reels</a>
+      <a class="btn" href="#gallery">🖼️ Explore My Gallery</a>
     </nav>
 
     <section class="section" id="reels">
       <h2 class="section-title">🔥 My Posts</h2>
-
       <div class="posts">
-        <a
-          class="post"
-          href="https://www.instagram.com/reel/DdyunN0SRJl/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="post-icon">▶️</span>
-          <strong>Watch Reel</strong>
-        </a>
-
-        <a
-          class="post"
-          href="https://www.instagram.com/ax___najmul___07/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="post-icon">📸</span>
-          <strong>Instagram Photos</strong>
-        </a>
-
-        <a
-          class="post"
-          href="https://www.instagram.com/ax___najmul___07/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="post-icon">🎬</span>
-          <strong>More Reels</strong>
-        </a>
-
-        <a
-          class="post"
-          href="https://www.instagram.com/ax___najmul___07/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="post-icon">❤️</span>
-          <strong>Follow for More</strong>
-        </a>
+        <a class="post" href="https://www.instagram.com/reel/DdyunN0SRJl/" target="_blank" rel="noopener noreferrer"><span class="post-icon">▶️</span><strong>Watch Reel</strong></a>
+        <a class="post" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer"><span class="post-icon">📸</span><strong>Instagram Photos</strong></a>
+        <a class="post" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer"><span class="post-icon">🎬</span><strong>More Reels</strong></a>
+        <a class="post" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer"><span class="post-icon">❤️</span><strong>Follow for More</strong></a>
       </div>
     </section>
 
     <section class="section" id="gallery">
       <h2 class="section-title">📸 My Gallery</h2>
-
       <div class="gallery">
         <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">🌅</a>
         <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">📷</a>
@@ -1095,15 +258,11 @@ img {
         <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">✨</a>
         <a class="gallery-item" href="https://www.instagram.com/ax___najmul___07/" aria-label="Instagram gallery">🌃</a>
       </div>
-
-      <p style="color:#aaa; font-size:13px; margin-top:12px">
-        More photos on Instagram
-      </p>
+      <p style="color:#aaa;font-size:13px;margin-top:12px">More photos on Instagram</p>
     </section>
 
     <section class="section" id="about">
       <h2 class="section-title">📂 About Me</h2>
-
       <div class="about">
         <p><span>Username</span><strong>ax___najmul___07</strong></p>
         <p><span>Location</span><strong>India 🇮🇳</strong></p>
@@ -1114,66 +273,19 @@ img {
 
     <section class="section" id="connect">
       <h2 class="section-title">📞 Connect With Me</h2>
-
       <div class="socials">
-        <a
-          class="social"
-          href="https://www.instagram.com/ax___najmul___07/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="social-icon">📷</span>
-          <span>Instagram</span>
-        </a>
-
-        <a
-          class="social"
-          href="https://www.youtube.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="social-icon">▶️</span>
-          <span>YouTube</span>
-        </a>
-
-        <a
-          class="social"
-          href="https://telegram.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="social-icon">✈️</span>
-          <span>Telegram</span>
-        </a>
-
-        <a
-          class="social"
-          href="https://www.whatsapp.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="social-icon">💬</span>
-          <span>WhatsApp</span>
-        </a>
+        <a class="social" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer"><span class="social-icon">📷</span><span>Instagram</span></a>
+        <a class="social" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><span class="social-icon">▶️</span><span>YouTube</span></a>
+        <a class="social" href="https://telegram.org/" target="_blank" rel="noopener noreferrer"><span class="social-icon">✈️</span><span>Telegram</span></a>
+        <a class="social" href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer"><span class="social-icon">💬</span><span>WhatsApp</span></a>
       </div>
     </section>
 
     <section class="section">
       <div class="support">
         <h2>🚀 Keep Supporting</h2>
-        <p>
-          Thank you for visiting my profile! ❤️
-          Stay connected for more videos and photos.
-        </p>
-        <a
-          class="btn"
-          style="margin-top:16px"
-          href="https://www.instagram.com/ax___najmul___07/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Follow My Journey
-        </a>
+        <p>Thank you for visiting my profile! ❤️ Stay connected for more videos and photos.</p>
+        <a class="btn" style="margin-top:16px" href="https://www.instagram.com/ax___najmul___07/" target="_blank" rel="noopener noreferrer">Follow My Journey</a>
       </div>
     </section>
 
@@ -1182,676 +294,44 @@ img {
       <p>❤️ Made with passion</p>
       <p><a href="#home">⬆️ Back to Top</a></p>
     </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const items = document.querySelectorAll(
-    ".section, header, .buttons, footer, .support"
-  );
-
-  items.forEach(function (item) {
-    item.classList.add("scroll-reveal");
-  });
-
-  const observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-
-  items.forEach(function (item) {
-    observer.observe(item);
-  });
-});// Scroll Progress Bar
-const progressBar = document.getElementById("scroll-progress-bar");
-
-function updateScrollProgress() {
-  const scrollTop = window.scrollY;
-  const scrollHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-
-  const progress = scrollHeight > 0
-    ? (scrollTop / scrollHeight) * 100
-    : 0;
-
-  progressBar.style.width = progress + "%";
-}
-
-window.addEventListener("scroll", updateScrollProgress, {
-  passive: true
-});
-
-window.addEventListener("resize", updateScrollProgress);
-
-updateScrollProgress();
-</script>
-
   </main>
-<a class="whatsapp-channel-btn"
-   href="https://whatsapp.com/channel/0029Va61bxfEKyZCYk6ODt3E"
-   target="_blank"
-   rel="noopener noreferrer">
-  💚 Follow My WhatsApp Channel
-</a>
-<div class="music-player">
-  <div class="song-info">
-    <span class="song-title">Dil Ibaadat</span>
-    <span class="song-subtitle">Now Playing ♡</span>
+
+  <a class="whatsapp-channel-btn" href="https://whatsapp.com/channel/0029Va61bxfEKyZCYk6ODt3E" target="_blank" rel="noopener noreferrer">💚 Follow My WhatsApp Channel</a>
+
+  <section class="music-player" aria-label="Music player">
+    <div class="song-info">
+      <span class="song-title">Dil Ibaadat</span>
+      <span class="song-subtitle">Now Playing ♡</span>
+    </div>
+    <audio controls preload="metadata">
+      <source src="./dil-ibaadat.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </section>
+
+  <div class="vip-counter" aria-label="Website visitor counter">
+    <div class="vip-eye" aria-hidden="true">◉</div>
+    <div class="vip-number">
+      <img src="https://librecounter.org/counter.svg" alt="Total website visits" referrerpolicy="unsafe-url">
+    </div>
+    <div class="vip-label"><span class="vip-dot"></span>VIP VISITORS</div>
   </div>
 
-  <audio controls preload="metadata">
-    <source src="./dil-ibaadat.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-  </audio>
-</div>
+  <script>
+    (function () {
+      const menuBtn = document.getElementById("pinkMenuBtn");
+      const menuLinks = document.getElementById("pinkMenuLinks");
+      const shareBtn = document.getElementById("shareWebsiteBtn");
+      const progressBar = document.getElementById("scroll-progress-bar");
 
-<style>
-.music-player {
-  background: rgba(12, 12, 15, 0.95);
-  border: 1px solid #383039;
-  border-radius: 16px;
-  padding: 16px;
-  color: white;
-  box-shadow: 0 0 18px rgba(255, 80, 160, 0.12);
-  max-width: 100%;
-}
-.song-info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-bottom: 12px;
-}
-.song-title {
-  font-size: 17px;
-  font-weight: 600;
-}
-.song-subtitle {
-  font-size: 12px;
-  color: #f08bb8;
-}
-.music-player audio {
-  width: 100%;
-  height: 40px;
-}
-</style>
-<style>
-/* Premium Black Glass Pink Neon Music Player */
-.music-player {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  box-sizing: border-box;
-  width: min(88%, 420px);
-  margin: 28px auto;
-  padding: 20px;
-  color: #fff;
-  background: linear-gradient(145deg, #211326, #050509 75%);
-  border: 1px solid rgba(255, 80, 190, .65);
-  border-radius: 22px;
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, .5),
-    0 0 22px rgba(255, 50, 180, .3),
-    inset 0 0 18px rgba(255, 80, 190, .08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  animation: pinkPlayerFloat 4s ease-in-out infinite;
-}
+      if (menuBtn && menuLinks) {
+        menuBtn.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const isOpen = menuLinks.classList.toggle("is-open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+          menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+        });
 
-.music-player h3,
-.music-player .song-title {
-  color: #ff8bd5;
-  text-shadow: 0 0 12px rgba(255, 65, 185, .7);
-}
-
-.music-player audio {
-  display: block;
-  width: 100%;
-  margin-top: 14px;
-  position: relative;
-}
-
-.music-player::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  z-index: -1;
-  border-radius: inherit;
-  border: 1px solid #ff36b7;
-  box-shadow: 0 0 14px rgba(255, 54, 183, .35);
-  animation: pinkPlayerGlow 3s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes pinkPlayerFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-@keyframes pinkPlayerGlow {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(255, 54, 183, .25);
-  }
-  50% {
-    box-shadow: 0 0 22px rgba(255, 54, 183, .65);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .music-player,
-  .music-player::before {
-    animation: none;
-  }
-}
-</style>
- 
-<style>
-/* PREMIUM 3D PINK NEON MUSIC PLAYER */
-.music-player {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  box-sizing: border-box;
-  width: min(92%, 440px);
-  margin: 30px auto;
-  padding: 22px;
-  color: #fff;
-  border: 1px solid rgba(255, 85, 200, .75);
-  border-radius: 26px;
-
-  background:
-    radial-gradient(
-      ellipse at top left,
-      rgba(255, 40, 170, .16),
-      transparent 60%
-    ),
-    linear-gradient(145deg, #1d1020, #07070c 75%);
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, .5),
-    0 0 12px rgba(255, 40, 170, .4),
-    0 0 32px rgba(255, 40, 170, .18),
-    inset 0 1px 1px rgba(255, 255, 255, .12);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  transform-style: preserve-3d;
-  animation:
-    pink3DFloat 5s ease-in-out infinite,
-    pink3DGlow 3s ease-in-out infinite alternate;
-
-  transition: box-shadow .35s ease, border-color .35s ease;
-}
-
-/* Rotating neon ring */
-.music-player::before {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  inset: -100%;
-  border-radius: 50%;
-
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 230deg,
-    #ff168f 260deg,
-    #ff8cde 290deg,
-    #a855f7 315deg,
-    transparent 345deg,
-    transparent 360deg
-  );
-
-  animation: pinkRingRotate 7s linear infinite;
-  pointer-events: none;
-}
-
-/* Inner glass surface */
-.music-player::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 2px;
-  border-radius: 24px;
-
-  background:
-    radial-gradient(
-      circle at 85% 10%,
-      rgba(255, 70, 190, .10),
-      transparent 45%
-    ),
-    linear-gradient(145deg, #190f1d, #08080d);
-
-  pointer-events: none;
-}
-
-.music-player h3,
-.music-player .song-title {
-  color: #ff8bd5;
-  text-shadow:
-    0 0 6px rgba(255, 70, 190, .8),
-    0 0 18px rgba(255, 30, 160, .45);
-  transform: translateZ(18px);
-}
-
-.music-player .song-subtitle {
-  color: #eaa5d0;
-}
-
-.music-player audio {
-  display: block;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin-top: 14px;
-  transform: translateZ(10px);
-}
-
-.music-player:hover {
-  border-color: #ff8cde;
-  box-shadow:
-    0 20px 48px rgba(0, 0, 0, .55),
-    0 0 18px rgba(255, 40, 170, .5),
-    0 0 40px rgba(255, 40, 170, .25);
-}
-
-@keyframes pink3DFloat {
-  0%, 100% {
-    transform: perspective(900px)
-      rotateX(0deg) rotateY(-1deg) translateY(0);
-  }
-  50% {
-    transform: perspective(900px)
-      rotateX(2deg) rotateY(1deg) translateY(-7px);
-  }
-}
-
-@keyframes pink3DGlow {
-  from {
-    filter: drop-shadow(0 0 4px rgba(255, 30, 160, .12));
-  }
-  to {
-    filter: drop-shadow(0 0 12px rgba(255, 30, 160, .28));
-  }
-}
-
-@keyframes pinkRingRotate {
-  to { transform: rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .music-player,
-  .music-player::before {
-    animation: none;
-  }
-
-  .music-player,
-  .music-player:hover {
-    transform: none;
-  }
-}
-/* Pink Neon Luxury — Home Page Only */
-.container header .profile {
-  border-color: #ff78cb;
-  box-shadow:
-    0 0 12px rgba(255, 20, 147, 0.65),
-    0 0 28px rgba(255, 20, 147, 0.35);
-  animation: homePinkGlow 3s ease-in-out infinite alternate;
-}
-
-.container .buttons .btn {
-  position: relative;
-  border: 1px solid rgba(255, 120, 203, 0.75);
-  background: linear-gradient(135deg, #210b20, #750044, #210b20);
-  background-size: 200% 200%;
-  box-shadow:
-    0 6px 0 #390022,
-    0 0 14px rgba(255, 20, 147, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: homeButtonGlow 4s ease-in-out infinite;
-}
-
-.container .buttons .btn:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow:
-    0 8px 0 #390022,
-    0 0 24px rgba(255, 20, 147, 0.65);
-}
-
-.container .buttons .btn:active {
-  transform: translateY(3px) scale(0.98);
-  box-shadow: 0 2px 0 #390022;
-}
-
-@keyframes homePinkGlow {
-  from {
-    filter: brightness(0.95);
-    box-shadow: 0 0 10px #ff149355;
-  }
-  to {
-    filter: brightness(1.12);
-    box-shadow:
-      0 0 18px #ff1493aa,
-      0 0 32px #ff45b855;
-  }
-}
-
-@keyframes homeButtonGlow {
-  0%, 100% {
-    background-position: 0% 50%;
-    box-shadow: 0 6px 0 #390022, 0 0 12px #ff149344;
-  }
-  50% {
-    background-position: 100% 50%;
-    box-shadow: 0 6px 0 #390022, 0 0 22px #ff149377;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .container header .profile,
-  .container .buttons .btn {
-    animation: none;
-  }
-}
-
-  }
-  
-/* Perfect Round DP Fix */
-.container header .profile img {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  display: block;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 50%;
-}
-
-.container header .profile {
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-  }/* VIP NEON COUNTER */
-.vip-counter {
-  width: calc(100% - 32px);
-  max-width: 430px;
-  min-height: 68px;
-  margin: 12px auto;
-  padding: 12px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 10px;
-  background: rgba(8, 5, 14, 0.92);
-  border: 1px solid #ff42c8;
-  border-radius: 18px;
-  box-shadow:
-    0 0 10px rgba(255, 35, 180, 0.28),
-    inset 0 0 14px rgba(255, 35, 180, 0.07);
-  animation: vipGlow 3s ease-in-out infinite;
-}
-
-.vip-eye {
-  color: #ff55ce;
-  font-size: 30px;
-  line-height: 1;
-  text-shadow: 0 0 12px #ff35bd;
-  animation: eyePulse 2s ease-in-out infinite;
-}
-
-.vip-number img {
-  display: block;
-  width: 95px;
-  max-width: 100%;
-  height: auto;
-  border: 0;
-  border-radius: 5px;
-}
-
-.vip-label {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  color: #ff72d5;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  white-space: nowrap;
-}
-
-.vip-dot {
-  width: 6px;
-  height: 6px;
-  flex-shrink: 0;
-  background: #ff40c7;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #ff40c7;
-  animation: dotBlink 1.2s infinite;
-}
-
-@keyframes vipGlow {
-  0%, 100% {
-    box-shadow: 0 0 8px #ff35bd33,
-      inset 0 0 10px #ff35bd0d;
-  }
-  50% {
-    box-shadow: 0 0 18px #ff35bd66,
-      inset 0 0 16px #ff35bd1c;
-  }
-}
-
-@keyframes eyePulse {
-  0%, 100% { opacity: 0.75; }
-  50% {
-    opacity: 1;
-    text-shadow: 0 0 18px #ff35bd;
-  }
-}
-
-@keyframes dotBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-@media (max-width: 360px) {
-  .vip-counter {
-    gap: 7px;
-    padding: 10px;
-  }
-
-  .vip-label {
-    font-size: 9px;
-    letter-spacing: 1px;
-  }
-
-  .vip-number img {
-    width: 75px;
-  }
-  }
-  }
-  </style>
- 
-<!-- Pink Neon Hamburger Menu -->
-<div class="pink-nav">
-  <a class="pink-nav-brand" href="#">♡ Najmul</a>
-  <button class="pink-menu-btn" id="pinkMenuBtn"
-    aria-label="Open menu" aria-expanded="false"
-    aria-controls="pinkMenuLinks" type="button">
-    <span></span><span></span><span></span>
-  </button>
-<button id="shareWebsiteBtn" type="button" aria-label="Share Website">
-  ↗ Share
-</button>
-  
-  <nav class="pink-menu-links" id="pinkMenuLinks">
-    <a href="#">🏠 Home</a>
-    <a href="#about">👤 About</a>
-    <a href="#posts">📝 Posts</a>
-    <a href="#gallery">🖼️ Gallery</a>
- <a href="upi://pay?pa=mirnajmul23-4@oksbi&amp;pn=najmulmir&amp;cu=INR">
-  💖 Support Me / Pay Now
- </a>
-    <a href="#contact">💌 Connect With Me</a>
-  </nav>
-</div>
-
-  
-
-<style>.pink-nav {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  background: rgba(8,8,14,.95);
-  border-bottom: 1px solid #ff168f;
-  box-shadow: 0 0 18px #ff168f44;
-}
-.pink-nav-brand {
-  color: #ff78cb;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-}
-.pink-menu-btn {
-  width: 46px;
-  height: 42px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border: 1px solid #ff45b8;
-  border-radius: 12px;
-  background: #1b0c1b;
-}
-
-.pink-menu-btn {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 99999;
-  width: 58px;
-  height: 58px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  border: 1px solid #ff45b8;
-  border-radius: 12px;
-  background: #1b0c1b;
-  box-shadow: 0 0 12px #ff168f;
-}
-
-.pink-menu-btn span {
-  display: block;
-  width: 23px;
-  height: 2px;
-  background: #ff78cb;
-  box-shadow: 0 0 8px #ff168f;
-}
-  
-.pink-menu-links {
-  display: none;
-  position: fixed;
-  top: 80px;
-  right: 12px;
-  width: 230px;
-  padding: 10px;
-  background: #100914;
-  border: 1px solid #ff45b8;
-  border-radius: 14px;
-  box-shadow: 0 0 22px #ff168f55;
-}
-  
-.pink-menu-links.is-open {
-  display: grid;
-}
-.pink-menu-links a {
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-}
-.pink-menu-links a:hover {
-  color: #ff78cb;
-  background: #ff168f22;
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("pinkMenuBtn");
-  const menuLinks = document.getElementById("pinkMenuLinks");
-
-  if (!menuBtn || !menuLinks) return;
-
-  menuBtn.onclick = function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    menuLinks.classList.toggle("is-open");
-
-    menuBtn.setAttribute(
-      "aria-expanded",
-      menuLinks.classList.contains("is-open") ? "true" : "false"
-    );
-  };
-
-  menuLinks.querySelectorAll("a").forEach(function (link) {
-    link.onclick = function () {
-      menuLinks.classList.remove("is-open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    };
-  });
-});
-document.getElementById("shareWebsiteBtn").addEventListener("click", async () => {
-  const shareData = {
-    title: "Ax Najmul Creator",
-    text: "मेरी वेबसाइट देखें!",
-    url: "https://axnajmul07.github.io/ax___najmul___07/"
-  };
-
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-    } catch (error) {
-      console.log("Share cancelled");
-    }
-  } else {
-    try {
-      await navigator.clipboard.writeText(shareData.url);
-      alert("Website link copied!");
-    } catch (error) {
-      prompt("अपनी वेबसाइट का लिंक कॉपी करें:", shareData.url);
-    }
-  }
-});
-<!-- VIP VISITORS COUNTER -->
-<div class="vip-counter">
-  <div class="vip-eye">◉</div>
-
-  <div class="vip-number">
-    <img
-      src="https://librecounter.org/counter.svg"
-      alt="Total website visits"
-      referrerpolicy="unsafe-url">
-  </div>
-
-  <div class="vip-label">
-    <span class="vip-dot"></span>
-    VIP VISITORS
-  </div>
-</div>
-</body>
-
-  </html>
+        menuLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click"
