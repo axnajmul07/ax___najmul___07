@@ -1789,17 +1789,12 @@ updateScrollProgress();
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("pinkMenuBtn");
-  const menuLinks = document.getElementById("pinkMenuLinks");
+const menuBtn = document.getElementById("pinkMenuBtn");
+const menuLinks = document.getElementById("pinkMenuLinks");
 
-  if (!menuBtn || !menuLinks) return;
-
-  menuBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    menuLinks.classList.toggle("is-open");
-
-    const isOpen = menuLinks.classList.contains("is-open");
+if (menuBtn && menuLinks) {
+  menuBtn.addEventListener("click", function () {
+    const isOpen = menuLinks.classList.toggle("is-open");
     menuBtn.setAttribute("aria-expanded", String(isOpen));
   });
 
@@ -1809,8 +1804,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuBtn.setAttribute("aria-expanded", "false");
     });
   });
-});
-
+  }
 document.getElementById("shareWebsiteBtn").addEventListener("click", async () => {
   const shareData = {
     title: "Ax Najmul Creator",
