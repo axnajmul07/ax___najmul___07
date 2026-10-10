@@ -1578,6 +1578,102 @@ updateScrollProgress();
   border-radius: 50%;
 }
 
+  }/* VIP NEON COUNTER */
+.vip-counter {
+  width: calc(100% - 32px);
+  max-width: 430px;
+  min-height: 68px;
+  margin: 12px auto;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  background: rgba(8, 5, 14, 0.92);
+  border: 1px solid #ff42c8;
+  border-radius: 18px;
+  box-shadow:
+    0 0 10px rgba(255, 35, 180, 0.28),
+    inset 0 0 14px rgba(255, 35, 180, 0.07);
+  animation: vipGlow 3s ease-in-out infinite;
+}
+
+.vip-eye {
+  color: #ff55ce;
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 0 0 12px #ff35bd;
+  animation: eyePulse 2s ease-in-out infinite;
+}
+
+.vip-number img {
+  display: block;
+  width: 95px;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 5px;
+}
+
+.vip-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #ff72d5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.vip-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  background: #ff40c7;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff40c7;
+  animation: dotBlink 1.2s infinite;
+}
+
+@keyframes vipGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px #ff35bd33,
+      inset 0 0 10px #ff35bd0d;
+  }
+  50% {
+    box-shadow: 0 0 18px #ff35bd66,
+      inset 0 0 16px #ff35bd1c;
+  }
+}
+
+@keyframes eyePulse {
+  0%, 100% { opacity: 0.75; }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 18px #ff35bd;
+  }
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 360px) {
+  .vip-counter {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .vip-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .vip-number img {
+    width: 75px;
+  }
   }
   }
   </style>
@@ -1735,22 +1831,22 @@ document.getElementById("shareWebsiteBtn").addEventListener("click", async () =>
     }
   }
 });
-</script>
-<section class="vip-visitor-card">
-<div class="vip-visitor-icon">👁️</div>
-<h3>VIP VISITORS</h3>
-<p class="vip-visitor-caption">TOTAL WEBSITE VIEWS</p>
+<!-- VIP VISITORS COUNTER -->
+<div class="vip-counter">
+  <div class="vip-eye">◉</div>
 
-<a href="https://librecounter.org/referer/show"
-target="_blank" rel="noopener"
-aria-label="View website visitor statistics">
-<img
-src="https://librecounter.org/counter.svg"
-referrerpolicy="unsafe-url"
-alt="Website visitor counter"
-style="max-width:100%;height:auto;">
-</a>
-</section>
+  <div class="vip-number">
+    <img
+      src="https://librecounter.org/counter.svg"
+      alt="Total website visits"
+      referrerpolicy="unsafe-url">
+  </div>
+
+  <div class="vip-label">
+    <span class="vip-dot"></span>
+    VIP VISITORS
+  </div>
+</div>
 </body>
 
   </html>
