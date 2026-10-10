@@ -1789,25 +1789,27 @@ updateScrollProgress();
 </style>
 
 <script>
-const menuBtn = document.getElementById("pinkMenuBtn");
-const menuLinks = document.getElementById("pinkMenuLinks");
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("pinkMenuBtn");
+  const menuLinks = document.getElementById("pinkMenuLinks");
 
-if (menuBtn && menuLinks) {
-  menuBtn.addEventListener("click", () => {
+  if (!menuBtn || !menuLinks) return;
+
+  menuBtn.addEventListener("click", function (event) {
+    event.preventDefault();
     menuLinks.classList.toggle("is-open");
-    const open = menuLinks.classList.contains("is-open");
-    menuBtn.setAttribute("aria-expanded", String(open));
-  });
-}
 
-if (menuLinks && menuBtn) {
-  menuLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
+    const isOpen = menuLinks.classList.contains("is-open");
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  menuLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
       menuLinks.classList.remove("is-open");
       menuBtn.setAttribute("aria-expanded", "false");
     });
   });
-}
+});
 
 document.getElementById("shareWebsiteBtn").addEventListener("click", async () => {
   const shareData = {
